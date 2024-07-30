@@ -1,0 +1,1 @@
+export {LandingLayout as default} from './LandingLayout'
