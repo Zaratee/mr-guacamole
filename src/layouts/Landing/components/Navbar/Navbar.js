@@ -1,43 +1,61 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import MenuIcon from 'src/assets/icones/menu'
 import logo from 'src/assets/common/logo.png'
-import anime from 'animejs/lib/anime.es.js';
-import ItemBorderNavbar from 'src/assets/svg/itemBorderNavbar';
+import NavbarItem from './components/NavbarItem';
 
 export const Navbar = () => {
 
+  const [navbarData, setNavbarData] = useState([
+   {
+    label: 'Inicio',
+    isActive: true,
+    width: 38
+   },
+   {
+    label: 'Nosotros',
+    isActive: false,
+    width: 68
+   },
+   {
+    label: 'Catálogo',
+    isActive: false,
+    width: 66
+   },
+   {
+    label: 'Contactanos',
+    isActive: false,
+    width: 94
+   }
+ ])
+
   useEffect(() => {
-    anime({
-      targets: '#border1 path',
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeOutQuad',
-      duration: 2000,
-      delay: function(el, i) { return i * 450 },
-      direction: 'alternate',
-    });
-  })
+
+  }, [])
+
+  const handlerOnClickNavbar = (newLabelActive)=>{
+    const indexFound = navbarData.findIndex((element) => element.label == newLabelActive);
+    setNavbarData(navbarData.map((data,index) => {
+      if(index == indexFound){
+        return{...data, isActive: true}
+      }else {
+        return {...data, isActive: false}
+      }
+    }))
+  }
+
   return (
     <div className='p-6 px-14 flex'>
       <div className='cursor-pointer select-none'>
         <MenuIcon size='2.5rem'/>
       </div>
       <div className=' flex gap-14 ml-14 items-center  w-[70%]'>
-        <div className='cursor-pointer select-none bg'>
-          Inicio
-          <div><ItemBorderNavbar width={38}/></div>
-        </div>
-        <div className='cursor-pointer select-none'>
-          Nosotros
-          <div><ItemBorderNavbar width={68}/></div>
-        </div>
-        <div className='cursor-pointer select-none'>
-          Catálogo
-        <div><ItemBorderNavbar width={66}/></div>
-        </div>
-        <div className='cursor-pointer select-none'>
-          Contactanos
-          <div><ItemBorderNavbar width={94}/></div>
-        </div>
+        {
+          navbarData.map((data)=>{
+            return(
+              <NavbarItem handlerOnClickNavbar={handlerOnClickNavbar} isActive={data.isActive} width={data.width} label={data.label}/>
+            )
+          })
+        }
       </div>
       <img className='hidde-logo w-[165px] h-[50px] fixed right-14 top-6' src={logo}/>
     </div>
