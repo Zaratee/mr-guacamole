@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MenuIcon from 'src/assets/icones/menu'
 import logo from 'src/assets/common/logo.png'
 import NavbarItem from './components/NavbarItem';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
 
@@ -27,10 +28,11 @@ export const Navbar = () => {
     width: 94
    }
  ])
-
+const navigate = useNavigate()
   useEffect(() => {
-
-  }, [])
+    const indexOfSelection = navbarData.findIndex((element)=> element.isActive == true)
+    navigate(indexOfSelection == 2 ? 'cataalogo': navbarData[indexOfSelection].label.toLowerCase())
+  }, [navbarData])
 
   const handlerOnClickNavbar = (newLabelActive)=>{
     const indexFound = navbarData.findIndex((element) => element.label == newLabelActive);
