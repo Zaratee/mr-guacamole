@@ -1,0 +1,1 @@
+export {Contactanos as default} from './Contactanos'

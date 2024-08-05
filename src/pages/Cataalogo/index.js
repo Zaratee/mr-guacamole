@@ -1,0 +1,1 @@
+export {Cataalogo as default} from './Cataalogo'

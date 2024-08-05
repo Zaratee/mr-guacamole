@@ -1,0 +1,1 @@
+export {Nosotros as default} from './Nosotros'
