@@ -46,7 +46,7 @@ const navigate = useNavigate()
   }
 
   return (
-    <div className='p-6 px-14 flex'>
+    <div className='p-6 px-14 flex fixed top-0'>
       <div className='cursor-pointer select-none'>
         <MenuIcon size='2.5rem'/>
       </div>

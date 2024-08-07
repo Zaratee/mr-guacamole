@@ -5,7 +5,7 @@ import inicioLogo from 'src/assets/common/inicioLogo.png'
 export const Inicio = () => {
 
   return (
-    <div className=' h-full flex items-center justify-center md:justify-around   px-4'>
+    <div className=' h-full flex items-center justify-center md:justify-around bg   px-4'>
       <div className='flex flex-col gap-3  w-[100%]  md:w-fit'>
         <div className=' text-6xl font-bold lexend'>Catálogo Virtual</div>
         <div className=' text-4xl font-extralight lexend'> Cotiza los productos para<br/> recibirlos a domicilio! </div>

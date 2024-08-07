@@ -4,9 +4,11 @@ import Navbar from './components/Navbar'
 
 export const LandingLayout = () => {
   return (
-    <div >
+    <div>
         <Navbar/>
-        <Outlet/>
+        <div className='w-full h-[100vh] '> 
+          <Outlet/>
+        </div>
     </div>
   )
 }
