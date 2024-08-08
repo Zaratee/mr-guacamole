@@ -16,19 +16,19 @@ export const Nosotros = () => {
       </div>
       <div className=' flex h-[60%] w-full justify-evenly gap-6 items-center'>
         <div onClick={()=>{navigate('/nosotros/tienda')}} onMouseEnter={()=>{setTitle('Tienda')}} className='w-15% relative hover:scale-105 transition-all cursor-pointer'>
-          <img src={location} className='w-full ' />
+          <img alt='ubicacion' src={location} className='w-full ' />
           <div className='w-full h-full  absolute top-0 flex items-center justify-center'>
             <GooglePinSVG/>
           </div>
         </div>
         <div onClick={()=>{navigate('/nosotros/aguacate')}}  onMouseEnter={()=>{setTitle('Aguacate Orgánico')}} className='w-15% relative hover:scale-105 transition-all cursor-pointer'>
-          <img src={avocado} className='w-full'/>
+          <img alt='aguacate' src={avocado} className='w-full'/>
           <div className='w-full h-full  absolute top-0 flex items-center justify-center'>
-            <img src={avocadoIcon} className='w-[155px] ' />
+            <img alt='aguacateICON' src={avocadoIcon} className='w-[155px] ' />
           </div>
         </div>
         <div onClick={()=>{navigate('/nosotros/productos')}}  onMouseEnter={()=>{setTitle('Productos del cuidado de piel y cabello')}} className='w-15% relative hover:scale-105 transition-all cursor-pointer'>
-          <img src={shampoo} className='w-full'/>
+          <img alt='shampoo' src={shampoo} className='w-full'/>
         </div>
       </div>
     </div>

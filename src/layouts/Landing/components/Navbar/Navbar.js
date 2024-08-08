@@ -30,14 +30,15 @@ export const Navbar = () => {
  ])
 const navigate = useNavigate()
   useEffect(() => {
-    const indexOfSelection = navbarData.findIndex((element)=> element.isActive == true)
-    navigate(indexOfSelection == 2 ? 'cataalogo': navbarData[indexOfSelection].label.toLowerCase())
+    const indexOfSelection = navbarData.findIndex((element)=> element.isActive === true)
+    navigate(indexOfSelection === 2 ? 'cataalogo': navbarData[indexOfSelection].label.toLowerCase())
+    // eslint-disable-next-line
   }, [navbarData])
 
   const handlerOnClickNavbar = (newLabelActive)=>{
-    const indexFound = navbarData.findIndex((element) => element.label == newLabelActive);
+    const indexFound = navbarData.findIndex((element) => element.label === newLabelActive);
     setNavbarData(navbarData.map((data,index) => {
-      if(index == indexFound){
+      if(index === indexFound){
         return{...data, isActive: true}
       }else {
         return {...data, isActive: false}
@@ -59,7 +60,7 @@ const navigate = useNavigate()
           })
         }
       </div>
-      <img className='hidde-logo w-[165px] h-[50px] fixed right-14 top-6' src={logo}/>
+      <img alt='logo' className='hidde-logo w-[165px] h-[50px] fixed right-14 top-6' src={logo}/>
     </div>
   )
 }
