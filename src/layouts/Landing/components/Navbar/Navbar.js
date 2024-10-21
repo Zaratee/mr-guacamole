@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import MenuIcon from 'src/assets/icones/menu'
 import logo from 'src/assets/common/logo.png'
 import NavbarItem from './components/NavbarItem';
 import { useNavigate } from 'react-router-dom';
+import AvocadoIcon from 'src/assets/icones/avocado';
 
 export const Navbar = () => {
 
@@ -48,8 +48,8 @@ const navigate = useNavigate()
 
   return (
     <div className='p-6 px-14 flex fixed top-0'>
-      <div className='cursor-pointer select-none'>
-        <MenuIcon size='2.5rem'/>
+      <div className=' select-none'>
+        <AvocadoIcon />
       </div>
       <div className=' flex gap-14 ml-14 items-center  w-[70%]'>
         {
