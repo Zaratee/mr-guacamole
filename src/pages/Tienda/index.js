@@ -1,1 +1,0 @@
-export {Tienda as default} from './Tienda'
