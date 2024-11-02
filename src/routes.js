@@ -5,6 +5,7 @@ import LandingLayout from "./layouts/Landing";
 import Nosotros from "./pages/Nosotros";
 import Cataalogo from "./pages/Cataalogo";
 import Contactanos from "./pages/Contactanos";
+import CatalogLayout from "./layouts/Catalog";
 
   
 export const router = createBrowserRouter([
@@ -25,10 +26,6 @@ export const router = createBrowserRouter([
         element:<Nosotros/>
       },
       {
-        path:'cataalogo',
-        element:<Cataalogo/>
-      },
-      {
         path:'contactanos',
         element:<Contactanos/>
       },
@@ -38,6 +35,16 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'/Catalogo',
+    element: <CatalogLayout/>,
+    children: [
+      {
+        index: true,
+        element: <Cataalogo/>
+      }
+    ]
+  }
   
   ]);
   

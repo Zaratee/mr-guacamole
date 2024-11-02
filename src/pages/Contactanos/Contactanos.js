@@ -8,7 +8,7 @@ export const Contactanos = () => {
       <div className=' w-full h-full  mt-[80px] flex justify-center items-center'>
         <div className=' md:-ml-56 h-fit shadow-xl  w-[280px] md:w-[550px] rounded-md'>  
           <div className='h-full md:flex '>
-            <img src='/local1.jpg' className='  w-full '/>
+            <img alt='local' src='/local1.jpg' className='  w-full '/>
             <div className='text-center p-4 bg-slate-50 h-auto '>
               <div className=' font-light text-xl '>
                   Estamos a sus ordenes en nuestro punto de venta! 
