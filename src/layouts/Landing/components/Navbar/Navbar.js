@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import logo from 'src/assets/common/logo.png'
-import NavbarItem from './components/NavbarItem';
 import { useNavigate } from 'react-router-dom';
 import AvocadoIcon from 'src/assets/icones/avocado';
+import MobileNavbar from './size/MobileNavbar';
+import NormalNavbar from './size/NormalNavbar';
 
 export const Navbar = () => {
 
+  const navigate = useNavigate()
+  const [showMobileNavbar, setShowMobileNavbar] = useState(false)
   const [navbarData, setNavbarData] = useState([
    {
     label: 'Inicio',
@@ -28,7 +31,7 @@ export const Navbar = () => {
     width: 94
    }
  ])
-const navigate = useNavigate()
+ 
   useEffect(() => {
     const indexOfSelection = navbarData.findIndex((element)=> element.isActive === true)
     navigate(indexOfSelection === 2 ? 'cataalogo': navbarData[indexOfSelection].label.toLowerCase())
@@ -46,21 +49,16 @@ const navigate = useNavigate()
     }))
   }
 
+  const handlerVisibilityMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar)
+
   return (
-    <div className='p-6 px-14 flex fixed top-0'>
-      <div className=' select-none'>
+    <div className='p-6 md:px-14 flex fixed top-0'>
+      <div className=' select-none' onClick={handlerVisibilityMobileNavbar}>
         <AvocadoIcon />
       </div>
-      <div className=' flex gap-14 ml-14 items-center  w-[70%]'>
-        {
-          navbarData.map((data)=>{
-            return(
-              <NavbarItem handlerOnClickNavbar={handlerOnClickNavbar} isActive={data.isActive} width={data.width} label={data.label}/>
-            )
-          })
-        }
-      </div>
-      <img alt='logo' className='hidde-logo w-[165px] h-[50px] fixed right-14 top-6' src={logo}/>
+      <NormalNavbar navbarData={navbarData} handlerOnClickNavbar={handlerOnClickNavbar}/>
+      <MobileNavbar showMobileNavbar={showMobileNavbar} hideNavbar={handlerVisibilityMobileNavbar} navbarData={navbarData} handlerOnClickNavbar={handlerOnClickNavbar}/>
+      <img alt='logo' className=' w-[165px] h-[50px] fixed right-7 md:right-4 top-6' src={logo}/>
     </div>
   )
 }

@@ -1,0 +1,1 @@
+export {NormalNavbar as default} from './NormalNavbar'

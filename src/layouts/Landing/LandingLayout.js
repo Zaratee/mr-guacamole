@@ -6,7 +6,7 @@ export const LandingLayout = () => {
   return (
     <div>
         <Navbar/>
-        <div className='w-full h-[100vh] '> 
+        <div className='w-full h-[100vh] overflow-hidden'> 
           <Outlet/>
         </div>
     </div>
