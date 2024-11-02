@@ -5,12 +5,12 @@ import WhatsappIcon from 'src/assets/icones/whatsapp'
 export const Contactanos = () => {
   return (
   <div className='w-full flex flex-col justify-center h-full'>
-      <div className=' w-full h-full  mt-[100px] flex justify-center items-center'>
-        <div className=' md:-ml-56 h-fit shadow-xl  w-[300px] md:w-[550px] rounded-md'>  
+      <div className=' w-full h-full  mt-[80px] flex justify-center items-center'>
+        <div className=' md:-ml-56 h-fit shadow-xl  w-[280px] md:w-[550px] rounded-md'>  
           <div className='h-full md:flex '>
             <img src='/local1.jpg' className='  w-full '/>
             <div className='text-center p-4 bg-slate-50 h-auto '>
-              <div className=' font-light text-2xl '>
+              <div className=' font-light text-xl '>
                   Estamos a sus ordenes en nuestro punto de venta! 
               </div>
               <div className=' flex flex-col gap-7 p-2 justify-evenly mt-4 h-full  '>
