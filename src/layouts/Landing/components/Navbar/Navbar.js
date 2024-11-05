@@ -34,7 +34,7 @@ export const Navbar = () => {
  
   useEffect(() => {
     const indexOfSelection = navbarData.findIndex((element)=> element.isActive === true)
-    navigate(indexOfSelection === 2 ? 'Catalogo': navbarData[indexOfSelection].label.toLowerCase())
+    navigate(indexOfSelection === 2 ? 'catalogo': navbarData[indexOfSelection].label.toLowerCase())
     // eslint-disable-next-line
   }, [navbarData])
 
