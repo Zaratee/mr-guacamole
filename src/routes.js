@@ -7,6 +7,9 @@ import Cataalogo from "./pages/Cataalogo";
 import Contactanos from "./pages/Contactanos";
 import CatalogLayout from "./layouts/Catalog";
 import Login from "./pages/Login";
+import AuthGuard from "./components/AuthGard";
+import AdminHome from "./pages/AdminHome";
+import AdminLayoutt from "./layouts/Admin";
 
   
 export const router = createBrowserRouter([
@@ -46,9 +49,30 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    
     {
       path:'/admin',
-      element:<Login/>
+      element: <AuthGuard/>,
+      children: [
+        {
+          path: '*',
+          element: <Navigate to={'/admin'} />,
+        },
+        {
+          path:'login',
+          element: <Login/>
+        },
+        {
+          path:'home',
+          element: <AdminLayoutt/>,
+          children: [
+            {
+              index: true,
+              element: <AdminHome/>
+            }
+          ]
+        }
+      ]
     }
     
   ]);

@@ -1,0 +1,1 @@
+export {AdminLayoutt as default} from './AdminLayout'
