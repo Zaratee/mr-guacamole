@@ -19,7 +19,7 @@ export const AuthGuard = () => {
     useEffect(() => {
         user == null ? 
         navigate('/admin/login') 
-        : navigate('/admin/home')
+        : navigate('/admin/products')
     }, [user])
     
 

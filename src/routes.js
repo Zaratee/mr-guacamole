@@ -8,7 +8,7 @@ import Contactanos from "./pages/Contactanos";
 import CatalogLayout from "./layouts/Catalog";
 import Login from "./pages/Login";
 import AuthGuard from "./components/AuthGard";
-import AdminHome from "./pages/AdminHome";
+import Products from "./pages/Products";
 import AdminLayoutt from "./layouts/Admin";
 
   
@@ -63,12 +63,12 @@ export const router = createBrowserRouter([
           element: <Login/>
         },
         {
-          path:'home',
+          path:'products',
           element: <AdminLayoutt/>,
           children: [
             {
               index: true,
-              element: <AdminHome/>
+              element: <Products/>
             }
           ]
         }
