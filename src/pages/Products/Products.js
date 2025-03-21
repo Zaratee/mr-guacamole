@@ -11,7 +11,7 @@ export const Products = () => {
 
   return (
       <ModalProductContext.Provider value={[showProductModal, setShowProductModal]} >
-          <div className='w-full h-full relative -z-10'> 
+          <div className='w-full h-full relative z-10 '> 
                 <Header/> 
                 <ProductsContainer/>
                 <ModalAddProduct/>
