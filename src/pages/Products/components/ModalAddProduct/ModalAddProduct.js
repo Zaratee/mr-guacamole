@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext , useState} from 'react'
 import CrossIcon from 'src/assets/icones/cross'
 import Input from 'src/components/Input'
 import { ModalProductContext } from '../../Products'
@@ -7,7 +7,9 @@ import { ModalProductContext } from '../../Products'
 
 export const ModalAddProduct = () => {
     const [showProductModal, setShowProductModal] = useContext(ModalProductContext)
+    const [productInfo, setProductInfo] = useState({})
 
+    const updateInfo = ()=> {}
     if(!showProductModal){
         return
     }
@@ -26,11 +28,11 @@ export const ModalAddProduct = () => {
                         </div>
                     </div>
                     <div className='px-6'>
-                        <Input name={'Nombre'}/>
+                        <Input name={'Nombre'} onInputChange={updateInfo}/>
                         <Input name={'Descripcion'}/>
                         <div className='flex gap-3'>
                             <Input name={'Categoria'}/>
-                            <Input name={'Precio'}/>
+                            <Input name={'Precio'} type={'number'}/>
 
                         </div>
                     </div>

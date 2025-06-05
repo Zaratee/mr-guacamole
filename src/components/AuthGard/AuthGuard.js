@@ -20,6 +20,7 @@ export const AuthGuard = () => {
         user == null ? 
         navigate('/admin/login') 
         : navigate('/admin/products')
+        // eslint-disable-next-line
     }, [user])
     
 
